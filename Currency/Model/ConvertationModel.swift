@@ -8,21 +8,10 @@
 import SwiftUI
 
 struct ConvertationModel {
-    
- var result: String = ""
-    
-    mutating func convertation(_ chosenCurrency: Double,_ dollarAmount: Double) {
-        
-        let result = dollarAmount * chosenCurrency
-        
-        self.result = String(result)
-        
-    }
-    
-    mutating func refresh() {
-        
-        self.result = ""
-        
+    func convertation(_ firstCurrency: Double,_ secondCurrency: Double,_ amount: Double) -> String {
+        let result = amount / firstCurrency * secondCurrency
+        let formattedResult = String(format: "%.2f", result)
+        return formattedResult
     }
     
 }
